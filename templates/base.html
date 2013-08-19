@@ -1,0 +1,81 @@
+<!DOCTYPE.html>
+{% load staticfiles %}
+
+<html>
+
+<head>
+
+    <title>DH-Overflow {% block title %}{% endblock %}</title>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <a class="brand" href="{% url 'home' %}">DH Overflow</a>
+    <ul class="nav">
+      {% if login_link %}
+      <li><a href="{% url 'profile' %}">{{ question.user }}</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+      {% else %}
+      <li class="active"><a href="{% url 'sign up' %}">Sign Up</a></li>
+      <li><a href="{% url 'login' %}">Login</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>
+
+{% if not logged_in %}
+<div class="jumbotron">
+        <h1>Welcome to DH Overflow!</h1>
+        <p class="lead">DH Overflow an online community that allows questions to be answered by a community, vote if they're good, vote if they're useless.
+        Answering life's tough questions since...now?
+</div>
+{% else %}
+
+{{ question_form }}
+
+{% endif %}
+
+<hr>
+
+{% block content %}
+
+{% if logged_in %}
+
+<h3 class="muted">Ask a question</h3>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Ask!" class="btn btn-primary"/>
+                </form>
+
+{% endif %}
+
+<hr>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <!--Question content-->
+      <h5>Questions<5>
+        {% for question in questions %}
+          <ul>
+           <li><a href="{% url 'questions' %}"><h3>{{ questions }}</h3><a><li>
+           <p><blockquote>{{ forumuser }} {{ answer.timedate|timesince }} ago</blockquote></p>
+          <ul>
+        {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+</body>
+
+</html>

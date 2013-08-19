@@ -1,0 +1,16 @@
+<html>
+
+
+{{ Name }}'s average is {{ average }}.
+
+{% if needed_points %}
+    {% if needed_points > 100 %}
+        {{ Name }} is not going to get an average of 80.
+    {% else %}
+        {{ Name }} needs {{ needed_points }} to get an average of 80.
+    {% endif %}
+{% endif %}
+<!--the key symbols,% is the syntax allowed for if statements in html
+each if needs to be ended %endif% after each section of if statements-->
+
+</html>

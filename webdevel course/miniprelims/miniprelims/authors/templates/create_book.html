@@ -1,0 +1,25 @@
+<!DOCTYPE.html>
+<html>
+<head>
+    <title>Create a new book</title>
+</head>
+
+
+<body>
+
+<ul>
+{% for book in book_list %}
+    <li>{{ book }}</li>
+{% endfor %}
+</ul>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ book_form }}
+    <input type="submit" value="Create a new book">
+</form>
+
+
+</body>
+
+</html>

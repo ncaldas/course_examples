@@ -1,0 +1,56 @@
+Exercise 1
+A palindrome is a word that is spelled the same backward and forward, like “noon” and “redivider”. Write a function called is_palindrome that takes a string argument and returns True if it is a palindrome and False otherwise.
+
+Exercise 2
+A string slice can take a third index that specifies the “step size;” that is, the number of spaces between successive characters. A step size of 2 means every other character; 3 means every third, etc.
+>>> fruit = 'banana'
+>>> fruit[0:5:2]
+'bnn'
+A step size of -1 goes through the word backwards, so the slice [::-1] generates a reversed string. Use this idiom to write a one-line version of is_palindrome, call it is_palindrome2
+
+Exercise 3
+ROT13 is a weak form of encryption that involves “rotating” each letter in a word by 13 places. To rotate a letter means to shift it through the alphabet, wrapping around to the beginning if necessary, so ’A’ shifted by 3 is ’D’ and ’Z’ shifted by 1 is ’A’.
+Write a function called rotate_word that takes a string and an integer as parameters, and that returns a new string that contains the letters from the original string “rotated” by the given amount.
+
+For example, “cheer” rotated by 7 is “jolly” and “melon” rotated by -10 is “cubed”.
+
+HINT: You might want to use the built-in functions ord, which converts a character to a numeric code, and chr, which converts numeric codes to characters.
+
+Exercise 4
+Write a function called is_sorted that takes a list as a parameter and returns True if the list is sorted in ascending order and False otherwise. You can assume (as a precondition) that the elements of the list can be compared with the relational operators <, >, etc.
+For example, is_sorted([1,2,2]) should return True and is_sorted(['b','a']) should return False.
+
+Exercise 5
+Two words are anagrams if you can rearrange the letters from one to spell the other. Write a function called is_anagram that takes two strings and returns True if they are anagrams.
+
+Exercise 6
+Write a function called has_duplicates that takes a list and returns True if there is any element that appears more than once. It should not modify the original list.
+
+Exercise 7
+Use a dictionary to write a faster, simpler version of has_duplicates, has_duplicates2
+
+Exercise 8
+Write a function called remove_duplicates that takes a list and returns a new list with only the unique elements from the original.
+HINT: they don’t have to be in the same order.
+
+Exercise 9
+Write a function called get_words that reads the file words.txt and builds and returns the list of unique words. The words.txt is this document, so copy the text, go to Gedit, paste it, and save it as words.txt.
+HINT: Use the character ‘ ’ to separate words.
+
+Exercise 9
+Write a function called get_words_freq that reads the file words.txt (same as previous exercise) and builds and returns a dictionary with words as keys, and the total number of apparitions of that word as the value for that key.
+
+Exercise 10
+If you were given a dictionary that maps from letters to frequencies, you might want to invert it; that is, create a dictionary that maps from frequencies to letters. Since there might be several letters with the same frequency, each value in the inverted dictionary should be a list of letters.
+
+Write a function invert_dict that does exactly that.
+Here is an example:
+
+>>> hist = {'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}
+>>> inverse = invert_dict(hist)
+>>> print inverse
+{1: ['a', 'p', 't', 'o'], 2: ['r']}
+
+Exercise 11
+Write a function called most_frequent that takes a string and returns of letters in decreasing order of frequency.
+

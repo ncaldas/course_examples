@@ -1,0 +1,60 @@
+<!DOCTYPE.html>
+{% load staticfiles %}
+<html>
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" />
+    <title>Moviez  {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Movies</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+
+        {% if movies_list %}
+            <ul>
+            {% for movie in movies_list %}
+                <li>
+                    <a href="{% url 'moviez_info' movie.id %}">{{ movie.title }}</a>
+                </li>
+                {% endfor %}
+            {% else %}
+                <li>No movies in database</li>
+            {% endif %}
+            </ul>
+            
+
+    </div>
+      {% if is_info %}
+    <div class="span6">
+
+     <h2>Actors</h2>
+        {% for actor in actor_list %}
+            <p>{{ actor }}</p>
+        {% endfor %}
+
+       
+        
+    <h2>Directed By</h2>
+                <p>{{ director }}</p>
+        
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+<script src="{% static 'js/home.js' %}"></script>
+</body>
+
+</html>

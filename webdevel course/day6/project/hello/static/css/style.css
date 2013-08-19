@@ -1,0 +1,41 @@
+ol li {
+    font-size: 20px;
+}
+
+ol li ol li {
+    font-size: 10px;
+}
+
+ol li ol li ol li {
+    font-size: 20px:
+}
+
+ol li ol li ol li: first p{
+    font-size: 30px
+}
+
+.my-paragraph {
+    font-size:30px;
+    font-weight: bold;
+}
+
+/*selector is the path in the html, for example the path of item 1 in ordered list would be html/body/ol/li. But the hmtl/body is optional, but definitely has to be [ol li] = which means all the lists (li) in the ordered list (ol)
+the structure normally looks like:
+selector{
+    rule-name: value;
+}
+CSS is a cascade file which goes from defining the biggest item to the smallest; from first to last
+the class means that the parameters will only occur for the class specified, it can also be further specified adding a path making the class only able to occur in the case of that specific path
+reset is a set of code that you can find on the internet and it allows the style for each browser to be the same that you ave specified in the css file
+
+
+bootstrap and grid system
+
+div class="span1"
+    > becuase bootstrap only has the capacity of 12 coloumns, that means when you have span9 then you can only have within it span6/span3 (or combination where it equals 9
+it goes body - and then div, everything goes inside div
+
+fluid grid allows the site to all go smaller or larger depending on the size of the browser window
+*/
+
+

@@ -1,0 +1,82 @@
+pip install South
+	-> allows for the migration of attributes in models
+	-before if the model was:
+		﻿
+class Movie(models.Model):
+    title = models.CharField(max_length=100)
+    
+    -> with migration you can change the attribute name "title" to something like "title_of_movie"
+    
+﻿
+class Movie(models.Model):
+    title_of_movie = models.CharField(max_length=100)
+
+on the terminal :
+
+pip install South
+
+then:
+python manage.py syncdb ==> need to sync hte machine again
+
+python manage.py migrate movies
+
+-although South is a possibility to change attributes within models, however, what happens behind is that it deletes the data and moves it to the newly named field; this can be dangerous if data is not stored properly or migrated properly therefore it is better not to use this application at all
+
+--------------------------
+
+ECMAScript 7 8
+-javascript is an implementation of ecmascript using javas
+-ecma ignores all the capabilities of browsers, and only defines it
+-when java is used, the browser understands characteristics that ecma does not consider, to resolve this problem frameworks have been created => most famous is jQuery
+
+
+-browsers
+-DOM (document object model)
+[tree]
+root
+    head
+        title
+            "title"
+    body
+        div
+            div
+                p
+                    "text"
+-the root is the selector, use in css to apply stylesheet
+-jQuery adds comportamientos to things using the selector as a way to do it
+-all the connections that do not need the use of a server, is allowed because of javascript => things like when going on a word it brings a message, takes you to another page, changes colour, etc
+
+ex. jQuery("div div p").click(fn);
+ each line needs to end with ; 
+ the if blocks do not indent ; for javascript
+ if(){
+}
+ else{
+ }
+
+
+def fn():
+
+function fn() {
+    alert();
+}
+
+
+------
+using the console on the browser to see what javascript does
+control shift j
+
+javascript cdn should be copy and pasted within body but at the bottom
+    jquery.com
+
+when using jquery within code, you have to put in jQuery, however it is better and more compact to pass a variable (most seen is $) to become jQuery 
+
+define an anonymous function in which the paramter is $, within the code you can use $; at the same time that is is defined it is invoked with the parameter jQuery
+(function ($) {
+    $("div div p").click(fn);
+})(jQuery);
+
+javascript is used in the alerts and other things that you want to do within a website, without having to reload the entire html page
+for example the notifications in facebook would use Ajax
+JSON => uses dictionaries and keyes that are actually strings
+

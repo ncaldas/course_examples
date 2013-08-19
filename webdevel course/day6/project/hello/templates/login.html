@@ -1,0 +1,24 @@
+<html>
+
+<body>
+
+<h2>Super Secure System</h2>
+
+{% if logged %}
+    Welcome {{ username }}!
+    <a href="?logout">Log out</a>
+{% else %}
+    Hey, you must login first!
+    <form method='POST' action=''>
+        {% csrf_token %} 
+<!--        used to guarantee it is safe and template shares this 'secret' with my views-->
+        <input type='text' name='username' />
+        <input type='text' name='password' />
+        <input type='submit' name="Log in" />
+<!--    instead of sending values by GET send it through POSt-->
+{% endif %}
+
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Questions
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <!--Answer content-->
+      <h5>Questions<5>
+        {% for question in questions %}
+          <ul>
+           <h3>{{ questions }}</h3>
+           <p><blockquote>{{ forumuser }} {{ answer.timedate|timsince }} ago</blockquote></p>
+          <ul>
+        {% endfor %}
+      <h5>Answer</h5>
+      {% for answer in answers %}
+        <ul>
+        <form>If answer is correct checkmark</form><h3>{{ answer }}<h3><form>Where votes go</form>
+        <p><blockquote>{{ formuser }} {{ answer.timedate|timesince }} ago</blockquote></p>
+        </ul>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>TODO list</title>
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div class="container">
+<h1>Things to do:</h1>
+
+    <form method='post' action=''> 
+        {% csrf_token %}
+<!--    action should be empty '' then the name in the input should be what .get you want to use-->
+        {{ task_form.as_p }}
+<!--make the task_form as paragraphs-->
+<!--        <input  type='text' name='add' placeholder="add new task..." />-->
+        <input class="btn btn-medium btn-info" type="submit" value= "add"/>
+<!--        here it is important for the button to be input, and the type to be submit-->
+    </form>
+{% if tasks_number %}
+    <ol>
+    {% for key, value in tasks.items %} 
+        {% if key != 'tasks_number' %}
+            <li><span>{{ value }}<span> 
+            {% if '<s>' not in value %}
+                <a href="?del={{ key }}"><i class="icon-trash"></i></a></li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </ol>
+{% else %}
+    There is nothing to do. Yeeep!
+{% endif %}
+
+{{ code }}
+</div>
+</body>
+</html>
+
+<!--keys have keys .keys and values .values and the .items is the pairs, which can be used to iterate-->
+<!--for the form it has to be with variable add because that is what we want to capture, in addition with the .get-->
+

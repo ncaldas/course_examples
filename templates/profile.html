@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h3>Username</h3>
+    <blockquote>{{ forum_user.username }}<blockquote>
+    <h3>Email<h3>
+        {% for email in email_list %}
+        {{ user.email }}
+        <a href="{% url 'email_edit' user.id %}/"><i class="icon-pencil"></i></a>
+        {% endfor %}
+    <h3>Password<h3>
+        {% for password in password_list %}
+        <a href="{% url 'password_edit' user.id %}/"><i class="icon-pencil"></i></a>
+        {% endfor %}
+</div>
+
+{% endblock %}

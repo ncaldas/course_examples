@@ -1,0 +1,25 @@
+<!DOCTYPE.html>
+<html>
+<head>
+    <title>Create a new author</title>
+</head>
+
+
+<body>
+
+<ul>
+{% for author in author_list %}
+    <li>{{ author }}</li>
+{% endfor %}
+</ul>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ author_form }}
+    <input type="submit" value="Create a new author">
+</form>
+
+
+</body>
+
+</html>

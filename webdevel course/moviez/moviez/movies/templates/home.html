@@ -1,0 +1,26 @@
+{% extends "movies.html" %}
+
+{% block title %}
+Home
+{% blockend %}
+
+
+
+{% block content %}
+
+{{ obj_list|length }}
+{{ obj_list|first }}
+
+{% blockend %}
+
+<!--you can make your own filter (first), done in a new file, in a new folder called filters.py ; here it woudl be -->
+
+<!--from django import template-->
+
+<!--register = template.Library()-->
+
+<!--@register.filter(name="first")#the name is actually default to take the function as names-->
+<!--def first(value):-->
+<!--    return value[0]-->
+
+<!--since this template is a continuation of hte previous "main template", then what you would do is put through the object which is {{}} and from there filter it using it |, the filters already done are "length" for example, which could also be seen in django search -->

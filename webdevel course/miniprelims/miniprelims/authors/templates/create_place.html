@@ -1,0 +1,59 @@
+<!DOCTYPE.html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <title>Place</title>
+    <style>
+    body { background: white; }
+    .container { background: #8A2BE2; }
+    </style>
+</head>
+
+
+<body>
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+
+        <h2>Places</h2>
+        <ul>
+        {% for place in place_list %}
+            <li>
+                    {{ place.name }} 
+                    <a href="http://maps.google.com/maps?q={{ place.latitude}},{{ place.longitude}}">
+                        <i class="icon-globe"></i>
+                    </a>
+                    <a href="{% url 'place_edit' place.id %}/"><i class="icon-pencil"></i></a>
+                    <a href="{% url 'place_delete' place.id %}/"><i class="icon-remove"></i></a>
+            </li>
+        {% empty %}
+            No places yet
+        {% endfor %}
+        </ul>
+
+    </div>
+    <div class="span6">
+
+        <h2>Edit<h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ place_form.as_p }}
+            <input type="submit" class="btn-success btn-medium" value="{% if is_edit %}Save place{% else %}Create a new place{% endif %}">
+        </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+</body>
+
+</html>
